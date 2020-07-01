@@ -1,0 +1,145 @@
+@import url(button.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 300px 1fr 1fr 1fr 80px;
+    grid-template-areas:
+    "title"
+    "navbar"
+    "post1"
+    "post2"
+    "post3"
+    "footer"
+}
+
+.title {
+    grid-area: title;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #f2f2f2;
+    background-color: #333;
+    max-height: 80px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center;
+}
+
+.post1 {
+    grid-area: post1;
+}
+
+.post2 {
+    grid-area: post2;
+}
+
+.post3 {
+    grid-area: post3;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    color: #f2f2f2;
+    background-color: #333;
+    max-height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.image-homepage {
+    max-width: 450px;
+    height: 350px;
+}
+
+.link {
+    font-size: 20px;
+    color: #1E90FF;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.card {
+    background-color: #ced3de;
+    margin: 10px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-content: center;
+}
+
+/*Medium screens*/
+@media (min-width: 600px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 80px 1fr 1fr 40px;
+        grid-template-areas:
+        "title title"
+        "navbar post1"
+        "post2 post3"
+        "footer footer"
+    }
+
+    .card {
+        background-color: #ced3de;
+        margin: 10px;
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-content: center;
+    }
+
+    .image-homepage {
+        max-width: 375px;
+        height: 350px;
+    }
+}
+
+/*Large screens*/
+@media (min-width: 1101px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 12vw 1fr 1fr 1fr;
+        grid-template-rows: 80px 1fr 40px;
+        grid-template-areas:
+        "title title title title"
+        "navbar post1 post2 post3"
+        "footer footer footer footer"
+    }
+
+    .card {
+        background-color: #ced3de;
+        margin: 10px;
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-content: center;
+    }
+
+    .image-homepage {
+        max-width: 375px;
+        height: 350px;
+    }
+}
